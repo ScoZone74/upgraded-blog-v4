@@ -1,1 +1,1 @@
-web: gunicorn upgraded-blog-v4.main:app
+web: gunicorn main:app $PORT
