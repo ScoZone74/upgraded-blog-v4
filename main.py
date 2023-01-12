@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 
 from flask import Flask, render_template, redirect, url_for, flash, request, abort
 from functools import wraps
@@ -14,6 +15,13 @@ from sqlalchemy.ext.declarative import declarative_base
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from forms import CreatePostForm, RegisterForm, LogInForm, CommentForm
 from flask_gravatar import Gravatar
+from dotenv import load_dotenv
+
+# # LOAD ENVIRONMENT VARIABLES
+def configure():
+    load_dotenv()
+
+configure()
 
 # # GET YEAR FOR COPYRIGHT PURPOSES
 year = datetime.today().strftime("%Y")
